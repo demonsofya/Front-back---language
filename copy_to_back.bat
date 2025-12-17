@@ -1,0 +1,1 @@
+cp lang_front_output.txt ../backend

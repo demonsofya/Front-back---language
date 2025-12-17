@@ -1,0 +1,234 @@
+PUSH 0
+POPREG BX
+PUSH 0
+POPREG CX
+PUSH 0
+POPREG DX
+CALL :MAIN
+HLT
+:C
+PUSHREG DX
+PUSH 0
+ADD
+POPREG DX
+PUSH 0 ;pushing number
+PUSHREG CX
+PUSH 0
+ADD
+POPREG BX ; putting var index in BX
+POPM [BX] ; printing equalization
+PUSH 0 ;pushing number
+PUSHREG CX
+PUSH 1
+ADD
+POPREG BX ; putting var index in BX
+POPM [BX] ; printing equalization
+PUSH 0 ;pushing number
+PUSHREG CX
+PUSH 2
+ADD
+POPREG BX ; putting var index in BX
+POPM [BX] ; printing equalization
+PUSHREG CX
+PUSH 0
+ADD
+POPREG BX ; putting var index in BX
+IN
+POPM [BX] ; printing IN
+PUSHREG CX
+PUSH 1
+ADD
+POPREG BX ; putting var index in BX
+IN
+POPM [BX] ; printing IN
+PUSHREG CX
+PUSH 2
+ADD
+POPREG BX ; putting var index in BX
+IN
+POPM [BX] ; printing IN
+PUSHREG CX
+PUSH 0
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+PUSH 0 ;pushing number
+JNE :end_if_0
+PUSHREG CX
+PUSH 1
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+PUSH 0 ;pushing number
+JNE :end_if_1
+PUSHREG CX
+PUSH 2
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+PUSH 0 ;pushing number
+JNE :end_if_2
+PUSH 0 ;pushing number
+OUT
+PUSH 1 ;pushing number
+POPREG AX
+RET ; printing return from function
+:end_if_2
+JUMP :end_if_else_1
+:end_if_1
+PUSH -1 ;pushing number
+PUSHREG CX
+PUSH 2
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+MUL ; printing operation
+PUSHREG CX
+PUSH 1
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+DIV ; printing operation
+PUSHREG CX
+PUSH 0
+ADD
+POPREG BX ; putting var index in BX
+POPM [BX] ; printing equalization
+PUSHREG CX
+PUSH 0
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+OUT
+PUSH 1 ;pushing number
+POPREG AX
+RET ; printing return from function
+:end_if_else_1
+:end_if_0
+PUSHREG CX
+PUSH 1
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+PUSHREG CX
+PUSH 1
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+MUL ; printing operation
+PUSH 4 ;pushing number
+PUSHREG CX
+PUSH 0
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+MUL ; printing operation
+PUSHREG CX
+PUSH 2
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+MUL ; printing operation
+SUB ; printing operation
+PUSHREG CX
+PUSH 3
+ADD
+POPREG BX ; putting var index in BX
+POPM [BX] ; printing equalization
+PUSHREG CX
+PUSH 3
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+PUSH 0 ;pushing number
+JAE :end_if_3
+PUSH 451 ;pushing number
+OUT
+PUSH 1 ;pushing number
+POPREG AX
+RET ; printing return from function
+:end_if_3
+PUSHREG CX
+PUSH 3
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+PUSH 0 ;pushing number
+JNE :end_if_4
+PUSH -1 ;pushing number
+PUSHREG CX
+PUSH 1
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+MUL ; printing operation
+PUSHREG CX
+PUSH 3
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+SQRT ; printing operation
+ADD ; printing operation
+PUSHREG CX
+PUSH 0
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+DIV ; printing operation
+PUSH 2 ;pushing number
+DIV ; printing operation
+OUT
+PUSH 1 ;pushing number
+POPREG AX
+RET ; printing return from function
+:end_if_4
+PUSH -1 ;pushing number
+PUSHREG CX
+PUSH 1
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+MUL ; printing operation
+PUSHREG CX
+PUSH 3
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+SQRT ; printing operation
+ADD ; printing operation
+PUSHREG CX
+PUSH 0
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+DIV ; printing operation
+PUSH 2 ;pushing number
+DIV ; printing operation
+OUT
+PUSH -1 ;pushing number
+PUSHREG CX
+PUSH 1
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+MUL ; printing operation
+PUSHREG CX
+PUSH 3
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+SQRT ; printing operation
+SUB ; printing operation
+PUSHREG CX
+PUSH 0
+ADD
+POPREG BX ; putting var index in BX
+PUSHM [BX] ; printing variable
+DIV ; printing operation
+PUSH 2 ;pushing number
+DIV ; printing operation
+OUT
+PUSH 1 ;pushing number
+POPREG AX
+RET ; printing return from function
+HLT
